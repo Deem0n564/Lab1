@@ -61,7 +61,7 @@ int checkInputInt()
 {
 	int input;
 
-	while (1)
+	while (true)
 	{
 		if (cin >> input)
 		{
