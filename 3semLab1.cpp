@@ -13,7 +13,7 @@ class Object
 	}
 
 public:
-	void printSerialNumber();
+	void printSerialNumber() const;
 };
 
 int checkInputInt();
@@ -52,7 +52,7 @@ int main()
 	return 0;
 }
 
-void Object::printSerialNumber()
+void Object::printSerialNumber() const
 {
 	cout << serialNumber << endl;
 }
@@ -74,6 +74,7 @@ int checkInputInt()
 		{
 			cin.clear();
 			cin.ignore(100, '\n');
+
 			cout << " Incorrect! Please enter a valid integer: ";
 		}
 	}
