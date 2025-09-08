@@ -5,7 +5,7 @@ using namespace std;
 class Object
 {
 	int serialNumber;
-	int quantity;
+	static int quantity;
 
 	Object()
 	{
@@ -16,6 +16,8 @@ public:
 	void printSerialNumber();
 };
 
+int checkInputInt();
+
 int main()
 {
 	int choise;
@@ -23,17 +25,29 @@ int main()
 
 	do
 	{
-		cout << "\tMENU\n 1. Add object.\n 2. Delete object.\n 3. Exit\nYour choise is: ";
-			choise = cin.get();
-			if (cin.fail())
-			{
-				cin.clear();
-				cin.ignore(100, '\n');
+		cout << "\tMENU\n 1. Add object.\n 2. Delete object.\n 3. Print serial numbers.\n 4. Exit\n Your choise is: ";
 
-				cout << " Incorrect! Please, try again\n";
-			}
+		choise = checkInputInt();
+
+		switch (choise)
+		{
+		case 1:
+			break;
+
+		case 2:
+			break;
+
+		case 3:
+			break;
+
+		default:
+			cout << " Incorrect! Please, try again\n";
+
+			break;
+		}
 		
-	} while (choise != 3);
+	} while (choise != 4);
+
 
 	return 0;
 }
@@ -41,4 +55,28 @@ int main()
 void Object::printSerialNumber()
 {
 	cout << serialNumber << endl;
+}
+
+int checkInputInt()
+{
+	int input;
+
+	while (1)
+	{
+		if (cin >> input)
+		{
+			cin.ignore(100, '\n');
+
+			return input;
+		}
+
+		else
+		{
+			cin.clear();
+			cin.ignore(100, '\n');
+			cout << " Incorrect! Please enter a valid integer: ";
+		}
+	}
+
+	return input;
 }
