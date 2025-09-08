@@ -77,6 +77,4 @@ int checkInputInt()
 			cout << " Incorrect! Please enter a valid integer: ";
 		}
 	}
-
-	return input;
 }
