@@ -7,21 +7,26 @@ class Object
 	int serialNumber;
 	static int quantity;
 
+public:
 	Object()
 	{
-		serialNumber = quantity;
+		serialNumber = ++quantity;
 	}
-
-public:
 	void printSerialNumber() const;
 };
 
 int checkInputInt();
 
+int Object::quantity = 0;
+
 int main()
 {
-	int choise;
-	Object* obj;
+	int choise, numberToDelete;
+	Object* obj = NULL;
+
+	obj = new Object;
+
+	delete obj;
 
 	do
 	{
@@ -35,9 +40,16 @@ int main()
 			break;
 
 		case 2:
+			cout << " Enter serial number to delete: ";
+
+			numberToDelete = checkInputInt();
+
 			break;
 
 		case 3:
+			break;
+
+		case 4:
 			break;
 
 		default:
