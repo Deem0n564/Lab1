@@ -20,7 +20,7 @@ public:
 
 int checkInputInt();
 void erasingNumber(int numberToDelete, bool *DEL, vector<Object*> *objects);
-void printObjects(vector<Object*> const objects);
+void printObjects(vector<Object*> const &objects);
 
 int Object::quantity = 0;
 
@@ -144,7 +144,7 @@ void erasingNumber(int numberToDelete, bool *DEL, vector<Object*> *objects)
 	}
 }
 
-void printObjects(vector<Object*> const objects)
+void printObjects(vector<Object*> const &objects)
 {
 	for (const Object* obj : objects)
 	{
