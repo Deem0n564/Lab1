@@ -61,7 +61,7 @@ int main()
 
 			else
 			{
-				for (Object* obj : objects)
+				for (const Object* obj : objects)
 				{
 					obj->printSerialNumber();
 				}
