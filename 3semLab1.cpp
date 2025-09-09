@@ -19,7 +19,8 @@ public:
 };
 
 int checkInputInt();
-void erasingNumber(int numberToDelete, bool DEL, vector<Object*> *objects);
+void erasingNumber(int numberToDelete, bool *DEL, vector<Object*> *objects);
+void printObjects(vector<Object*> objects);
 
 int Object::quantity = 0;
 
@@ -56,7 +57,7 @@ int main()
 			numberToDelete = checkInputInt();
 			DEL = false;
 
-			erasingNumber(numberToDelete, DEL, &objects);
+			erasingNumber(numberToDelete, &DEL, &objects);
 
 			if (!DEL)
 			{
@@ -73,10 +74,7 @@ int main()
 
 			else
 			{
-				for (const Object* obj : objects)
-				{
-					obj->printSerialNumber();
-				}
+				printObjects(objects);
 			}
 
 			break;
@@ -129,7 +127,7 @@ int checkInputInt()
 	}
 }
 
-void erasingNumber(int numberToDelete, bool DEL, vector<Object*> *objects)
+void erasingNumber(int numberToDelete, bool *DEL, vector<Object*> *objects)
 {
 	for (auto temp = (*objects).begin(); temp != (*objects).end(); ++temp)
 	{
@@ -139,9 +137,17 @@ void erasingNumber(int numberToDelete, bool DEL, vector<Object*> *objects)
 
 			cout << " Object " << numberToDelete << " erased.\n";
 
-			DEL = true;
+			*DEL = true;
 
 			break;
 		}
+	}
+}
+
+void printObjects(vector<Object*> objects)
+{
+	for (const Object* obj : objects)
+	{
+		obj->printSerialNumber();
 	}
 }
