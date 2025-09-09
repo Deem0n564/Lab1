@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,12 +22,9 @@ int Object::quantity = 0;
 
 int main()
 {
-	int choise, numberToDelete;
-	Object* obj = NULL;
-
-	obj = new Object;
-
-	delete obj;
+	int choise;
+	int numberToDelete;
+	vector<Object*> objects;
 
 	do
 	{
@@ -37,9 +35,18 @@ int main()
 		switch (choise)
 		{
 		case 1:
+			objects.push_back(new Object);
+
 			break;
 
 		case 2:
+			if (objects.empty())
+			{
+				cout << "No objects to delete\n";
+
+				break;
+			}
+
 			cout << " Enter serial number to delete: ";
 
 			numberToDelete = checkInputInt();
@@ -47,6 +54,19 @@ int main()
 			break;
 
 		case 3:
+			if (objects.empty())
+			{
+				cout << " Zero objects created.\n";
+			}
+
+			else
+			{
+				for (Object* obj : objects)
+				{
+					obj->printSerialNumber();
+				}
+			}
+
 			break;
 
 		case 4:
@@ -66,7 +86,7 @@ int main()
 
 void Object::printSerialNumber() const
 {
-	cout << serialNumber << endl;
+	cout << " My serial number is: " << serialNumber << endl;
 }
 
 int checkInputInt()
