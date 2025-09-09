@@ -13,6 +13,8 @@ public:
 	{
 		serialNumber = ++quantity;
 	}
+
+	int getSerialNumber() const;
 	void printSerialNumber() const;
 };
 
@@ -24,6 +26,7 @@ int main()
 {
 	int choise;
 	int numberToDelete;
+	bool DEL;
 	vector<Object*> objects;
 
 	do
@@ -50,6 +53,26 @@ int main()
 			cout << " Enter serial number to delete: ";
 
 			numberToDelete = checkInputInt();
+			DEL = false;
+
+			for (auto temp = objects.begin(); temp != objects.end(); ++temp)
+			{
+				if ((*temp)->getSerialNumber() == numberToDelete)
+				{
+					objects.erase(temp);
+
+						cout << " Object " << numberToDelete << " erased.\n";
+
+						DEL = true;
+
+					break;
+				}
+			}
+
+			if (!DEL)
+			{
+				cout << " No objects with this number: " << numberToDelete << "\n";
+			}
 
 			break;
 
@@ -87,6 +110,11 @@ int main()
 void Object::printSerialNumber() const
 {
 	cout << " My serial number is: " << serialNumber << endl;
+}
+
+int Object::getSerialNumber() const
+{
+	return serialNumber;
 }
 
 int checkInputInt()
