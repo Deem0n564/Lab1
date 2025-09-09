@@ -19,6 +19,7 @@ public:
 };
 
 int checkInputInt();
+void erasingNumber(int numberToDelete, bool DEL, vector<Object*> *objects);
 
 int Object::quantity = 0;
 
@@ -55,19 +56,7 @@ int main()
 			numberToDelete = checkInputInt();
 			DEL = false;
 
-			for (auto temp = objects.begin(); temp != objects.end(); ++temp)
-			{
-				if ((*temp)->getSerialNumber() == numberToDelete)
-				{
-					objects.erase(temp);
-
-						cout << " Object " << numberToDelete << " erased.\n";
-
-						DEL = true;
-
-					break;
-				}
-			}
+			erasingNumber(numberToDelete, DEL, &objects);
 
 			if (!DEL)
 			{
@@ -136,6 +125,23 @@ int checkInputInt()
 			cin.ignore(100, '\n');
 
 			cout << " Incorrect! Please enter a valid integer: ";
+		}
+	}
+}
+
+void erasingNumber(int numberToDelete, bool DEL, vector<Object*> *objects)
+{
+	for (auto temp = (*objects).begin(); temp != (*objects).end(); ++temp)
+	{
+		if ((*temp)->getSerialNumber() == numberToDelete)
+		{
+			(*objects).erase(temp);
+
+			cout << " Object " << numberToDelete << " erased.\n";
+
+			DEL = true;
+
+			break;
 		}
 	}
 }
