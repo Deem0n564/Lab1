@@ -1,0 +1,21 @@
+#pragma once
+
+#include <iostream>
+
+class Object
+{
+	int serialNumber;
+
+public:
+	Object()
+	{
+		serialNumber = quantity;
+	}
+
+	int getSerialNumber() const;
+	void printSerialNumber() const;
+
+	static int quantity;
+};
+
+int checkInputInt();
