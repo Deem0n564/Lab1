@@ -5,12 +5,10 @@ int Object::quantity = 0;
 int main()
 {
 	int choise;
-	int numberToDelete;
 	int size;
 	int i;
 	Object *objects = nullptr;
 	Object* temp;
-	bool DEL;
 
 	size = 0;
 
