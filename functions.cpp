@@ -1,10 +1,5 @@
 #include "Header.h"
 
-void Object::printSerialNumber() const
-{
-	std::cout << " My serial number is: " << serialNumber << std::endl;
-}
-
 int Object::getSerialNumber() const
 {
 	return serialNumber;

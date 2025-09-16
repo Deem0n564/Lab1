@@ -13,7 +13,6 @@ public:
 	}
 
 	int getSerialNumber() const;
-	void printSerialNumber() const;
 
 	static int quantity;
 };
