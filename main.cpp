@@ -30,7 +30,12 @@ int main()
 			break;
 
 		case 3:
-			delete []objects;
+			if (objects)
+			{
+				delete[]objects;
+			}
+
+			objects = nullptr;
 
 			break;
 

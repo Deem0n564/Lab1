@@ -29,7 +29,7 @@ int checkInputInt()
 	}
 }
 
-void addObject(Object* &obj, int& size)
+void addObject(Object*& obj, int& size)
 {
 	Object* temp;
 

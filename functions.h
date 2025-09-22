@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 int checkInputInt();
-void addObject(const Object* &obj, int& size);
-void printObjects(Object *obj, int size);
+void addObject(Object*& obj, int& size);
+void printObjects(const Object *obj, int size);
