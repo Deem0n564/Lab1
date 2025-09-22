@@ -7,7 +7,6 @@ int main()
 {
 	int choise;
 	int size;
-	int i;
 	Object *objects = nullptr;
 
 	size = 0;

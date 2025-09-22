@@ -32,12 +32,11 @@ int checkInputInt()
 void addObject(Object* &obj, int& size)
 {
 	Object* temp;
-	int i;
 
 	Object::quantity++;
 	temp = new Object[size + 1];
 
-	for (i = 0; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		temp[i] = obj[i];
 	}
@@ -46,15 +45,13 @@ void addObject(Object* &obj, int& size)
 	obj = temp;
 	size++;
 
-	std::cout << " Added object with serial number = " << obj[(size) - 1].getSerialNumber() << "\n";
+	std::cout << " Added object with serial number = " << obj[size - 1].getSerialNumber() << "\n";
 
 }
 
-void printObjects(Object *obj, int size)
+void printObjects(const Object *obj, int size)
 {
-	int i;
-
-	for (i = 0; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		std::cout << " My serial number is " << obj[i].getSerialNumber() << "\n";
 	}
