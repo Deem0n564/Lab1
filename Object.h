@@ -16,5 +16,3 @@ public:
 
 	static int quantity;
 };
-
-int checkInputInt();

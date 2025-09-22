@@ -1,4 +1,5 @@
-#include "Header.h"
+#include "Object.h"
+#include "functions.h"
 
 int Object::getSerialNumber() const
 {
@@ -25,5 +26,36 @@ int checkInputInt()
 
 			std::cout << " Incorrect! Please enter a valid integer: ";
 		}
+	}
+}
+
+void addObject(Object* &obj, int& size)
+{
+	Object* temp;
+	int i;
+
+	Object::quantity++;
+	temp = new Object[size + 1];
+
+	for (i = 0; i < size; i++)
+	{
+		temp[i] = obj[i];
+	}
+
+	delete[] obj;
+	obj = temp;
+	size++;
+
+	std::cout << " Added object with serial number = " << obj[(size) - 1].getSerialNumber() << "\n";
+
+}
+
+void printObjects(Object *obj, int size)
+{
+	int i;
+
+	for (i = 0; i < size; i++)
+	{
+		std::cout << " My serial number is " << obj[i].getSerialNumber() << "\n";
 	}
 }

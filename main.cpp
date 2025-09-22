@@ -1,4 +1,5 @@
-#include "Header.h"
+#include "Object.h"
+#include "functions.h"
 
 int Object::quantity = 0;
 
@@ -8,7 +9,6 @@ int main()
 	int size;
 	int i;
 	Object *objects = nullptr;
-	Object* temp;
 
 	size = 0;
 
@@ -21,27 +21,12 @@ int main()
 		switch (choise)
 		{
 		case 1:
-			Object::quantity++;
-			temp = new Object[size + 1];
-
-			for (i = 0; i < size; i++)
-			{
-				temp[i] = objects[i];
-			}
-
-			delete[] objects;
-			objects = temp;
-			size++;
-
-			std::cout << " Added object with serial number = " << objects[size - 1].getSerialNumber() << "\n";
+			addObject(objects, size);
 
 			break;
 
 		case 2:
-			for (i = 0; i < size; i++)
-			{
-				std::cout << " My serial number is " << objects[i].getSerialNumber() << "\n";
-			}
+			printObjects(objects, size);
 
 			break;
 
