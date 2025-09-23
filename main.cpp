@@ -25,7 +25,7 @@ int main()
 			break;
 
 		case 2:
-			printObjects(objects, size);
+			printObjects(objects, &size);
 
 			break;
 

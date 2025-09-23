@@ -49,9 +49,9 @@ void addObject(Object*& obj, int& size)
 
 }
 
-void printObjects(const Object *obj, int size)
+void printObjects(const Object *obj, int* size)
 {
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < *size; i++)
 	{
 		std::cout << " My serial number is " << obj[i].getSerialNumber() << "\n";
 	}
