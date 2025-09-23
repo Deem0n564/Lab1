@@ -49,7 +49,7 @@ void addObject(Object*& obj, int& size)
 
 }
 
-void printObjects(const Object *obj, int* size)
+void printObjects(const Object *obj, const int* size)
 {
 	for (int i = 0; i < *size; i++)
 	{
